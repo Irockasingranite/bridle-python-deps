@@ -13,6 +13,7 @@
       in {
         packages = rec {
 
+          doxmlparser = python.callPackage ./packages/doxmlparser { };
           pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
           pyedbglib = python.callPackage ./packages/pyedbglib { };
           pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
