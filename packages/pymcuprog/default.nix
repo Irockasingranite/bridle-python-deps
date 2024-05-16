@@ -1,7 +1,8 @@
-{ lib
-, fetchPypi
-, buildPythonPackage
-, pyedbglib
+{
+  lib,
+  fetchPypi,
+  buildPythonPackage,
+  pyedbglib,
 }:
 
 buildPythonPackage rec {
@@ -19,7 +20,5 @@ buildPythonPackage rec {
 
   format = "wheel";
 
-  propagatedBuildInputs = [
-    pyedbglib
-  ];
+  propagatedBuildInputs = [ pyedbglib ];
 }

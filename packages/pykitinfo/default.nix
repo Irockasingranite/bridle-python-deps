@@ -1,11 +1,12 @@
-{ lib
-, fetchPypi
-, buildPythonPackage
-, pyusb
-, pyyaml
-, appdirs
-, pyedbglib
-, pydebuggerconfig
+{
+  lib,
+  fetchPypi,
+  buildPythonPackage,
+  pyusb,
+  pyyaml,
+  appdirs,
+  pyedbglib,
+  pydebuggerconfig,
 }:
 
 buildPythonPackage rec {

@@ -1,10 +1,11 @@
-{ lib
-, fetchPypi
-, buildPythonPackage
-, pythonRelaxDepsHook
-, setuptools
-, docutils
-, sphinx
+{
+  lib,
+  fetchPypi,
+  buildPythonPackage,
+  pythonRelaxDepsHook,
+  setuptools,
+  docutils,
+  sphinx,
 }:
 
 buildPythonPackage rec {
@@ -29,7 +30,5 @@ buildPythonPackage rec {
   ];
 
   # package isn't actually broken with docutils >=0.19
-  pythonRelaxDeps = [
-    "docutils"
-  ];
+  pythonRelaxDeps = [ "docutils" ];
 }

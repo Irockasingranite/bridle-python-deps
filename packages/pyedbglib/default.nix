@@ -1,7 +1,8 @@
-{ lib
-, fetchPypi
-, buildPythonPackage
-, pyserial
+{
+  lib,
+  fetchPypi,
+  buildPythonPackage,
+  pyserial,
 }:
 
 buildPythonPackage rec {
@@ -19,7 +20,5 @@ buildPythonPackage rec {
 
   format = "wheel";
 
-  propagatedBuildInputs = [
-    pyserial
-  ];
+  propagatedBuildInputs = [ pyserial ];
 }

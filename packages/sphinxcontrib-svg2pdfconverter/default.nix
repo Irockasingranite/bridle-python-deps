@@ -1,8 +1,9 @@
-{ lib
-, fetchFromGitHub
-, buildPythonPackage
-, setuptools
-, sphinx
+{
+  lib,
+  fetchFromGitHub,
+  buildPythonPackage,
+  setuptools,
+  sphinx,
 }:
 
 buildPythonPackage rec {
@@ -19,11 +20,7 @@ buildPythonPackage rec {
 
   format = "pyproject";
 
-  nativeBuildInputs = [
-    setuptools
-  ];
+  nativeBuildInputs = [ setuptools ];
 
-  propagatedBuildInputs = [
-    sphinx
-  ];
+  propagatedBuildInputs = [ sphinx ];
 }

@@ -1,8 +1,9 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, setuptools
-, sphinx-rtd-theme
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  setuptools,
+  sphinx-rtd-theme,
 }:
 
 buildPythonPackage rec {
@@ -21,7 +22,5 @@ buildPythonPackage rec {
 
   format = "wheel";
 
-  propagatedBuildInputs = [
-    sphinx-rtd-theme
-  ];
+  propagatedBuildInputs = [ sphinx-rtd-theme ];
 }

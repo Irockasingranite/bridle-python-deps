@@ -5,12 +5,21 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    (flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    (flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         python = pkgs.python3Packages;
-      in {
+      in
+      {
+        formatter = pkgs.nixfmt-rfc-style;
+
         packages = rec {
 
           bz = python.callPackage ./packages/bz { };
@@ -23,5 +32,6 @@
           sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
           sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
         };
-    }));
+      }
+    ));
 }
