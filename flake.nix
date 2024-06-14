@@ -33,6 +33,7 @@
           pyedbglib = python.callPackage ./packages/pyedbglib { };
           pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
           pymcuprog = python.callPackage ./packages/pymcuprog { inherit pyedbglib; };
+          python-ics = python.callPackage ./packages/python-ics { };
           sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
           sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
           sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
