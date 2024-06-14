@@ -26,6 +26,7 @@
           canalystii = python.callPackage ./packages/canalystii { };
           cantact = python.callPackage ./packages/cantact { };
           doxmlparser = python.callPackage ./packages/doxmlparser { };
+          hdf5storage = python.callPackage ./packages/hdf5storage { };
           pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
           pyedbglib = python.callPackage ./packages/pyedbglib { };
           pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
