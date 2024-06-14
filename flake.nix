@@ -23,6 +23,7 @@
         packages = rec {
 
           bz = python.callPackage ./packages/bz { };
+          canalystii = python.callPackage ./packages/canalystii { };
           doxmlparser = python.callPackage ./packages/doxmlparser { };
           pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
           pyedbglib = python.callPackage ./packages/pyedbglib { };
