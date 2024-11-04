@@ -78,6 +78,8 @@ buildPythonPackage rec {
     sontheim = [ python-can-sontheim ];
   };
 
+  pythonRelaxDeps = [ "msgpack" ];
+
   pythonImportsCheck = [ "can" ];
 
   meta = with lib; {
