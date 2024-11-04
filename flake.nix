@@ -55,6 +55,7 @@
           sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
           sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
           sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
+          sphinx-lint = python.callPackage ./packages/sphinx-lint { };
           sphobjinv = python.callPackage ./packages/sphobjinv { };
         };
       }
