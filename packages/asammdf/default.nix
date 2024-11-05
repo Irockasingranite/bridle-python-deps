@@ -35,21 +35,21 @@
 
 buildPythonPackage rec {
   pname = "asammdf";
-  version = "7.4.2";
+  version = "8.0.1";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-jHIMvl1HzEJCccn8OzIDdgcd7SWk4oH8IuEsvqrN3eI=";
+    hash = "sha256-qkC7QQOu++p1d3/0iIyO4gCJ5i8MFB9+B8Ad4b65Mkc=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     numpy
     setuptools
     wheel
   ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     canmatrix
     isal
     lxml
@@ -61,7 +61,7 @@ buildPythonPackage rec {
     typing-extensions
   ];
 
-  passthru.optional-dependencies = {
+  optional-dependencies = {
     decode = [
       chardet
       faust-cchardet
@@ -76,8 +76,12 @@ buildPythonPackage rec {
       hdf5storage
       python-snappy
     ];
-    export_matlab_v5 = [ scipy ];
-    filesystem = [ fsspec ];
+    export-matlab-v5 = [
+      scipy
+    ];
+    filesystem = [
+      fsspec
+    ];
     gui = [
       lxml
       natsort
@@ -88,15 +92,23 @@ buildPythonPackage rec {
       pyside6
       qtpy
     ];
-    symbolic_math = [ sympy ];
+    symbolic-math = [
+      sympy
+    ];
   };
 
-  pythonImportsCheck = [ "asammdf" ];
+  pythonRelaxDeps = [
+    "canmatrix"
+  ];
 
-  meta = with lib; {
+  pythonImportsCheck = [
+    "asammdf"
+  ];
+
+  meta = {
     description = "ASAM MDF measurement data file parser";
     homepage = "https://pypi.org/project/asammdf/";
-    license = licenses.gpl3Plus;
-    maintainers = with maintainers; [ ];
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [ ];
   };
 }
