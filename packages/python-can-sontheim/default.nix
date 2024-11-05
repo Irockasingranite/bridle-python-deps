@@ -33,7 +33,7 @@ buildPythonPackage rec {
     ];
   };
 
-  pythonImportsCheck = [ "python_can_sontheim" ];
+  pythonImportsCheck = [ "can_sontheim" ];
 
   meta = with lib; {
     description = "A python-can interface driver for Sontheim Industrie Elektronik CAN bus interfaces";
