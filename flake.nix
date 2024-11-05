@@ -23,7 +23,6 @@
         packages = rec {
 
           asammdf = python.callPackage ./packages/asammdf { inherit hdf5storage pyqtlet2; };
-          bz = python.callPackage ./packages/bz { };
           canalystii = python.callPackage ./packages/canalystii { };
           cantact = python.callPackage ./packages/cantact { };
           doxmlparser = python.callPackage ./packages/doxmlparser { };
