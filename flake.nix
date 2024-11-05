@@ -52,6 +52,7 @@
           python-can-sontheim = python.callPackage ./packages/python-can-sontheim { inherit python-can; };
           python-ics = python.callPackage ./packages/python-ics { };
           pyqtlet2 = python.callPackage ./packages/pyqtlet2 { };
+          sphinx8 = python.callPackage ./packages/sphinx8 { };
           sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
           sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
           sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
