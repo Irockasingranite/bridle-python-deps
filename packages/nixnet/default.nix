@@ -30,6 +30,12 @@ buildPythonPackage rec {
     typing
   ];
 
+  postPatch = ''
+    substituteInPlace nixnet/*/*.py \
+      --replace-quiet 'collections.Mapping' 'collections.abc.Mapping' \
+      --replace-quiet 'collections.Sequence' 'collections.abc.Sequence' \
+  '';
+
   pythonImportsCheck = [ "nixnet" ];
 
   meta = with lib; {
