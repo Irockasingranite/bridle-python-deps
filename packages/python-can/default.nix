@@ -11,7 +11,7 @@
   canalystii,
   # , python-can-canine # See below
   cantact,
-  python-can-cvector,
+  # python-can-cvector, # See below
   gs-usb,
   black,
   mypy,
@@ -57,7 +57,8 @@ buildPythonPackage rec {
     # python-can-canine
     # ];
     cantact = [ cantact ];
-    cvector = [ python-can-cvector ];
+    # Plugin requires extra libraries to build
+    # cvector = [ python-can-cvector ];
     gs_usb = [ gs-usb ];
     lint = [
       black

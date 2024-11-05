@@ -41,13 +41,11 @@
               cantact
               gs-usb
               nixnet
-              python-can-cvector
               python-can-remote
               python-can-sontheim
               python-ics
               ;
           };
-          python-can-cvector = python.callPackage ./packages/python-can-cvector { inherit python-can; };
           python-can-remote = python.callPackage ./packages/python-can-remote { };
           python-can-sontheim = python.callPackage ./packages/python-can-sontheim { inherit python-can; };
           python-ics = python.callPackage ./packages/python-ics { };
