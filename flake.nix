@@ -24,7 +24,6 @@
 
           asammdf = python.callPackage ./packages/asammdf { inherit hdf5storage pyqtlet2; };
           canalystii = python.callPackage ./packages/canalystii { };
-          cantact = python.callPackage ./packages/cantact { };
           doxmlparser = python.callPackage ./packages/doxmlparser { };
           hdf5storage = python.callPackage ./packages/hdf5storage { };
           gs-usb = python.callPackage ./packages/gs-usb { };
@@ -37,7 +36,6 @@
             inherit
               asammdf
               canalystii
-              cantact
               gs-usb
               nixnet
               python-can-remote

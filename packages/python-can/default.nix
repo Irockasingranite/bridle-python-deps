@@ -10,7 +10,7 @@
   wrapt,
   canalystii,
   # , python-can-canine # See below
-  cantact,
+  # cantact, # See below
   # python-can-cvector, # See below
   gs-usb,
   black,
@@ -56,7 +56,8 @@ buildPythonPackage rec {
     # canine = [
     # python-can-canine
     # ];
-    cantact = [ cantact ];
+    # Plugin requires extra rust toolchain setup to build
+    # cantact = [ cantact ];
     # Plugin requires extra libraries to build
     # cvector = [ python-can-cvector ];
     gs_usb = [ gs-usb ];
