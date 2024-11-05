@@ -4,29 +4,33 @@
   fetchPypi,
   setuptools,
   wheel,
+  python-can,
 }:
 
 buildPythonPackage rec {
   pname = "python-can-remote";
-  version = "0.2.1";
+  version = "0.2.2";
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-d+wIE3WD/TLoGxtI4+gv0EOTUTifbw0RTX5QmhbnlRc=";
+    pname = "python_can_remote";
+    inherit version;
+    hash = "sha256-wfnUmcsQ2BwQ75JPRw2+SAA18qK8eK/M1NZxNJ5Lz3o=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     setuptools
     wheel
   ];
 
-  pythonImportsCheck = [ "python_can_remote" ];
+  dependencies = [
+    python-can
+  ];
 
-  meta = with lib; {
+  meta = {
     description = "CAN over network bridge for Python";
     homepage = "https://pypi.org/project/python-can-remote/";
-    license = licenses.mit;
-    maintainers = with maintainers; [ ];
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ];
   };
 }
