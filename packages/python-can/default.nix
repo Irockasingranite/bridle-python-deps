@@ -17,7 +17,7 @@
   mypy,
   pylint,
   ruff,
-  asammdf,
+  # asammdf,
   filelock,
   python-ics,
   nixnet,
@@ -67,7 +67,7 @@ buildPythonPackage rec {
       pylint
       ruff
     ];
-    mf4 = [ asammdf ];
+    # mf4 = [ asammdf ];
     neovi = [
       filelock
       python-ics

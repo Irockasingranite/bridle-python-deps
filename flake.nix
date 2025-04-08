@@ -35,7 +35,6 @@
           pymcuprog = python.callPackage ./packages/pymcuprog { inherit pyedbglib; };
           python-can = python.callPackage ./packages/python-can {
             inherit
-              asammdf
               canalystii
               gs-usb
               nixnet
