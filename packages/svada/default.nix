@@ -14,6 +14,12 @@ python.pkgs.buildPythonApplication rec {
     hash = "sha256-F46QnoMX0MqrrBaQhkKavzXq62ZCXkv3kbQD0Nv+Wmc=";
   };
 
+  # WORKAROUND: Remove version bound on hatchling
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-quiet 'hatchling<1.27.0' 'hatchling'
+  '';
+
   build-system = [
     python.pkgs.hatch-vcs
     python.pkgs.hatchling
