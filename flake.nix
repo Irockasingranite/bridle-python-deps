@@ -43,7 +43,6 @@
           };
           python-can-remote = python.callPackage ./packages/python-can-remote { };
           python-can-sontheim = python.callPackage ./packages/python-can-sontheim { inherit python-can; };
-          python-ics = python.callPackage ./packages/python-ics { };
           sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
           sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
           sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
