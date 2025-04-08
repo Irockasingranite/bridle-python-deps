@@ -1,10 +1,10 @@
 {
   lib,
-  python3,
+  python,
   fetchPypi,
 }:
 
-python3.pkgs.buildPythonApplication rec {
+python.pkgs.buildPythonApplication rec {
   pname = "svada";
   version = "2.2.0";
   pyproject = true;
@@ -15,17 +15,17 @@ python3.pkgs.buildPythonApplication rec {
   };
 
   build-system = [
-    python3.pkgs.hatch-vcs
-    python3.pkgs.hatchling
+    python.pkgs.hatch-vcs
+    python.pkgs.hatchling
   ];
 
-  dependencies = with python3.pkgs; [
+  dependencies = with python.pkgs; [
     lxml
     numpy_2
     typing-extensions
   ];
 
-  optional-dependencies = with python3.pkgs; {
+  optional-dependencies = with python.pkgs; {
     cli = [
       intelhex
       tomlkit

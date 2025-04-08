@@ -1,10 +1,10 @@
 {
   lib,
-  python3,
+  python,
   fetchPypi,
 }:
 
-python3.pkgs.buildPythonApplication rec {
+python.pkgs.buildPythonApplication rec {
   pname = "sphinx-lint";
   version = "1.0.0";
   pyproject = true;
@@ -16,16 +16,16 @@ python3.pkgs.buildPythonApplication rec {
   };
 
   build-system = [
-    python3.pkgs.hatch-vcs
-    python3.pkgs.hatchling
+    python.pkgs.hatch-vcs
+    python.pkgs.hatchling
   ];
 
-  dependencies = with python3.pkgs; [
+  dependencies = with python.pkgs; [
     polib
     regex
   ];
 
-  optional-dependencies = with python3.pkgs; {
+  optional-dependencies = with python.pkgs; {
     tests = [
       pytest
       pytest-cov

@@ -1,11 +1,11 @@
 {
   lib,
-  python3,
+  python,
   fetchPypi,
   svada,
 }:
 
-python3.pkgs.buildPythonApplication rec {
+python.pkgs.buildPythonApplication rec {
   pname = "nrf-regtool";
   version = "9.0.1";
   pyproject = true;
@@ -17,16 +17,16 @@ python3.pkgs.buildPythonApplication rec {
   };
 
   build-system = [
-    python3.pkgs.hatch-vcs
-    python3.pkgs.hatchling
+    python.pkgs.hatch-vcs
+    python.pkgs.hatchling
   ];
 
-  dependencies = with python3.pkgs; [
+  dependencies = with python.pkgs; [
     intelhex
     svada
   ];
 
-  optional-dependencies = with python3.pkgs; {
+  optional-dependencies = with python.pkgs; {
     cli = [
       pydantic
       tomlkit
