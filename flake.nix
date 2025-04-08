@@ -28,6 +28,7 @@
           hdf5storage = python.callPackage ./packages/hdf5storage { };
           gs-usb = python.callPackage ./packages/gs-usb { };
           nixnet = python.callPackage ./packages/nixnet { };
+          nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
           pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
           pyedbglib = python.callPackage ./packages/pyedbglib { };
           pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
