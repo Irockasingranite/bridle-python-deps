@@ -4,7 +4,6 @@
   fetchPypi,
   setuptools,
   wheel,
-  enum34,
   six,
   typing,
 }:
@@ -25,7 +24,6 @@ buildPythonPackage rec {
   ];
 
   propagatedBuildInputs = [
-    enum34
     six
     typing
   ];
