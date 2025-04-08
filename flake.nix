@@ -39,7 +39,6 @@
               nixnet
               python-can-remote
               python-can-sontheim
-              python-ics
               ;
           };
           python-can-remote = python.callPackage ./packages/python-can-remote { };

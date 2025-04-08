@@ -18,8 +18,8 @@
   pylint,
   ruff,
   # asammdf,
-  filelock,
-  python-ics,
+  # filelock,
+  # python-ics,
   nixnet,
   uptime,
   python-can-remote,
@@ -68,10 +68,10 @@ buildPythonPackage rec {
       ruff
     ];
     # mf4 = [ asammdf ];
-    neovi = [
-      filelock
-      python-ics
-    ];
+    # neovi = [
+    #   filelock
+    #   python-ics
+    # ];
     nixnet = [ nixnet ];
     pcan = [ uptime ];
     remote = [ python-can-remote ];
