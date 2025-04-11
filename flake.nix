@@ -34,7 +34,6 @@
 
           doxmlparser = python.callPackage ./packages/doxmlparser { };
           hdf5storage = python.callPackage ./packages/hdf5storage { };
-          nixnet = python.callPackage ./packages/nixnet { };
           nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
           pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
           pyedbglib = python.callPackage ./packages/pyedbglib { };
