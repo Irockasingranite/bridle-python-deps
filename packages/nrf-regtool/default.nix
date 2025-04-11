@@ -33,7 +33,7 @@ python.pkgs.buildPythonApplication rec {
     ];
   };
 
-  pythonImportsCheck = [];
+  pythonImportsCheck = [ ];
 
   meta = {
     description = "Generate register content for memory-mapped peripherals";
