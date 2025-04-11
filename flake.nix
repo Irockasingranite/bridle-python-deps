@@ -42,14 +42,6 @@
           pyedbglib = python.callPackage ./packages/pyedbglib { };
           pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
           pymcuprog = python.callPackage ./packages/pymcuprog { inherit pyedbglib; };
-          python-can = python.callPackage ./packages/python-can {
-            inherit
-              canalystii
-              gs-usb
-              nixnet
-              python-can-remote
-              ;
-          };
           python-can-remote = python.callPackage ./packages/python-can-remote { };
           sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
           sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
