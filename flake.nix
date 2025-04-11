@@ -3,21 +3,31 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    cache-nix-action = {
+      url = "github:nix-community/cache-nix-action";
+      flake = false;
+    };
+
+    systems.url = "github:nix-systems/default";
   };
 
   outputs =
-    {
+    inputs@{
       self,
       nixpkgs,
       flake-utils,
+      cache-nix-action,
+      systems,
     }:
     (flake-utils.lib.eachDefaultSystem (
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        lib = nixpkgs.lib;
         python = pkgs.python3Packages;
-      in rec
-      {
+      in
+      rec {
         formatter = pkgs.nixfmt-rfc-style;
 
         packages = rec {
@@ -49,6 +59,20 @@
           sphinx-lint = python.callPackage ./packages/sphinx-lint { };
           sphobjinv = python.callPackage ./packages/sphobjinv { };
           svada = python.callPackage ./packages/svada { };
+
+          inherit
+            (import "${inputs.cache-nix-action}/saveFromGC.nix" {
+              inherit pkgs inputs;
+              inputsExclude = [
+                # the systems input will still be saved
+                # because flake-utils needs it
+                inputs.systems
+              ];
+              # Needs to be a list
+              derivations = lib.attrsets.mapAttrsToList (name: _: name) packages;
+            })
+            saveFromGC
+            ;
         };
 
         checks = packages;
