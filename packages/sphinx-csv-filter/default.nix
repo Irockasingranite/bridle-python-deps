@@ -1,34 +1,63 @@
 {
   lib,
-  fetchPypi,
   buildPythonPackage,
-  pythonRelaxDepsHook,
+  fetchPypi,
   setuptools,
-  docutils,
+  wheel,
   sphinx,
+  build,
+  twine,
+  flake8,
+  pytest,
+  pytest-cov,
+  pytest-flake8,
+  pytest-isort,
 }:
 
 buildPythonPackage rec {
-
   pname = "sphinx-csv-filter";
-  version = "0.4.1";
+  version = "0.4.2";
+  pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
-    sha256 = "sha256-9jsTa0SOnk+fs4n9asKwUTqJT0dePHmlkb7lnD5w7UI=";
+    pname = "sphinx_csv_filter";
+    inherit version;
+    hash = "sha256-5tFhTKMNhUA6XOZo9jSKmu7KuL9yOKPRNyPTxW6dqjQ=";
   };
 
-  format = "pyproject";
-  nativeBuildInputs = [
+  build-system = [
     setuptools
-    pythonRelaxDepsHook
+    wheel
   ];
 
-  propagatedBuildInputs = [
-    docutils
+  dependencies = [
     sphinx
   ];
 
-  # package isn't actually broken with docutils >=0.19
-  pythonRelaxDeps = [ "docutils" ];
+  optional-dependencies = {
+    development = [
+      build
+      setuptools
+      twine
+      wheel
+    ];
+    testing = [
+      flake8
+      pytest
+      pytest-cov
+      pytest-flake8
+      pytest-isort
+    ];
+  };
+
+  pythonImportsCheck = [
+    "csv"
+  ];
+
+  meta = {
+    description = "A CSV filter directive for docutils and Sphinx, that extends the \"csv-table\" reStructuredText directive to add row filtering options";
+    homepage = "https://pypi.org/project/sphinx-csv-filter";
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [ ];
+  };
 }
