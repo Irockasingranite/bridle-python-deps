@@ -1,26 +1,45 @@
 {
   lib,
-  fetchFromGitHub,
   buildPythonPackage,
+  fetchPypi,
   setuptools,
+  wheel,
   sphinx,
+  cairosvg,
 }:
 
 buildPythonPackage rec {
-
   pname = "sphinxcontrib-svg2pdfconverter";
-  version = "1.2.2";
+  version = "1.3.0";
+  pyproject = true;
 
-  src = fetchFromGitHub {
-    owner = "missinglinkelectronics";
-    repo = "sphinxcontrib-svg2pdfconverter";
-    rev = "v${version}";
-    hash = "sha256-E7x4FhkYRySZdifI/bfzd2ZwEyXPsugzJEe30o/mzSs=";
+  src = fetchPypi {
+    pname = "sphinxcontrib_svg2pdfconverter";
+    inherit version;
+    hash = "sha256-ZBGkzC9X7tlqDXu/oTn2jL55gwGIgeHm18RgU81pkR8=";
   };
 
-  format = "pyproject";
+  build-system = [
+    setuptools
+    wheel
+  ];
 
-  nativeBuildInputs = [ setuptools ];
+  dependencies = [
+    sphinx
+  ];
 
-  propagatedBuildInputs = [ sphinx ];
+  optional-dependencies = {
+    CairoSVG = [
+      cairosvg
+    ];
+  };
+
+  pythonImportsCheck = [ ];
+
+  meta = {
+    description = "Sphinx SVG to PDF converter extension";
+    homepage = "https://pypi.org/project/sphinxcontrib-svg2pdfconverter/";
+    license = lib.licenses.bsd2;
+    maintainers = with lib.maintainers; [ ];
+  };
 }
