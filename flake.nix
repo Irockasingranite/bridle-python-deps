@@ -16,7 +16,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         python = pkgs.python3Packages;
-      in
+      in rec
       {
         formatter = pkgs.nixfmt-rfc-style;
 
@@ -50,6 +50,8 @@
           sphobjinv = python.callPackage ./packages/sphobjinv { };
           svada = python.callPackage ./packages/svada { };
         };
+
+        checks = packages;
       }
     ));
 }
