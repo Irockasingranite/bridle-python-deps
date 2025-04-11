@@ -8,14 +8,14 @@
 buildPythonPackage rec {
 
   pname = "pydebuggerconfig";
-  version = "3.9.2.121";
+  version = "3.11.2.44";
 
   src = fetchPypi {
     inherit pname version;
     format = "wheel";
     python = "py3";
     dist = "py3";
-    sha256 = "sha256-SrGDaWW0Or8AFwb148xOGfKQuTv3ZoacU3rZFrk8tvM=";
+    sha256 = "sha256-loyNvJ66s0rtN/NmJ+sh/V/CobYEVDRUYsghDnoujNI=";
   };
 
   format = "wheel";
