@@ -2,25 +2,37 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  setuptools,
+  flit-core,
   sphinx-rtd-theme,
 }:
 
 buildPythonPackage rec {
-
   pname = "sphinx-tsn-theme";
-  version = "2024.1.0";
+  version = "2024.11.0";
+  pyproject = true;
 
   src = fetchPypi {
     pname = "sphinx_tsn_theme";
     inherit version;
-    format = "wheel";
-    python = "py3";
-    dist = "py3";
-    hash = "sha256-2BECC7XvezBzUk/Zs3CDfEfgX7K4YqcCYvsUQBLw0qs=";
+    hash = "sha256-MAS5XaGmuOgWMmjq45itDxX359zOCFYgOE1BxIOrMrg=";
   };
 
-  format = "wheel";
+  build-system = [
+    flit-core
+  ];
 
-  propagatedBuildInputs = [ sphinx-rtd-theme ];
+  dependencies = [
+    sphinx-rtd-theme
+  ];
+
+  pythonImportsCheck = [
+    "sphinx_tsn_theme"
+  ];
+
+  meta = {
+    description = "TiaC Systems Network (TSN) theme for Sphinx";
+    homepage = "https://pypi.org/project/sphinx-tsn-theme/";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ];
+  };
 }
