@@ -24,7 +24,6 @@
   uptime,
   python-can-remote,
   pyserial,
-  python-can-sontheim,
 }:
 
 buildPythonPackage rec {
@@ -77,7 +76,6 @@ buildPythonPackage rec {
     remote = [ python-can-remote ];
     seeedstudio = [ pyserial ];
     serial = [ pyserial ];
-    sontheim = [ python-can-sontheim ];
   };
 
   pythonRelaxDeps = [ "msgpack" ];
