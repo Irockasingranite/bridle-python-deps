@@ -32,7 +32,6 @@
 
         packages = rec {
 
-          canalystii = python.callPackage ./packages/canalystii { };
           doxmlparser = python.callPackage ./packages/doxmlparser { };
           hdf5storage = python.callPackage ./packages/hdf5storage { };
           gs-usb = python.callPackage ./packages/gs-usb { };
