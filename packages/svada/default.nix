@@ -38,7 +38,7 @@ python.pkgs.buildPythonApplication rec {
     ];
   };
 
-  pythonImportsCheck = [];
+  pythonImportsCheck = [ ];
 
   meta = {
     description = "SVD parsing for Python";
