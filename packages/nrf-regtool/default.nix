@@ -7,13 +7,13 @@
 
 python.pkgs.buildPythonApplication rec {
   pname = "nrf-regtool";
-  version = "9.0.1";
+  version = "9.1.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "nrf_regtool";
     inherit version;
-    hash = "sha256-DEs+GCUbgXBnOVBqZPhXARJZvdbTlv9Wxc1c43meZM4=";
+    hash = "sha256-in1lmhzNBtty7tmvc1GyoJei0OkR3u7EvdiunY6VS2I=";
   };
 
   build-system = [
