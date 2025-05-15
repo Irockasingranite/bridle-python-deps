@@ -7,13 +7,13 @@
 
 python.pkgs.buildPythonApplication rec {
   pname = "nrf-regtool";
-  version = "9.1.0";
+  version = "9.1.1";
   pyproject = true;
 
   src = fetchPypi {
     pname = "nrf_regtool";
     inherit version;
-    hash = "sha256-in1lmhzNBtty7tmvc1GyoJei0OkR3u7EvdiunY6VS2I=";
+    hash = "sha256-bs9PhC9WC9dzckmWF78kdFs1sQszAlXYSr2kWRxvyuk=";
   };
 
   build-system = [
@@ -32,8 +32,6 @@ python.pkgs.buildPythonApplication rec {
       tomlkit
     ];
   };
-
-  pythonImportsCheck = [ ];
 
   meta = {
     description = "Generate register content for memory-mapped peripherals";
