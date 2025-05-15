@@ -32,6 +32,7 @@
 
         packages = rec {
 
+          deptry = python.callPackage ./packages/deptry { };
           doxmlparser = python.callPackage ./packages/doxmlparser { };
           hdf5storage = python.callPackage ./packages/hdf5storage { };
           nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
