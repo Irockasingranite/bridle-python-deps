@@ -17,4 +17,11 @@ buildPythonPackage rec {
   };
 
   format = "wheel";
+
+  meta = {
+    description = "This is a python package to make it easier to parse the XML output produced by doxygen.";
+    homepage = "https://pypi.org/project/doxmlparser/";
+    license = lib.licenses.gpl2;
+    maintainers = with lib.maintainers; [ ];
+  };
 }
