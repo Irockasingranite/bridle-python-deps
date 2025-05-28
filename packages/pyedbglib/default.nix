@@ -21,4 +21,11 @@ buildPythonPackage rec {
   format = "wheel";
 
   propagatedBuildInputs = [ pyserial ];
+
+  meta = {
+    description = "pyedbglib is a low-level protocol library for communicating with Microchip CMSIS-DAP based debuggers";
+    homepage = "https://pypi.org/project/pyedbglib/";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ];
+  };
 }
