@@ -21,4 +21,12 @@ buildPythonPackage rec {
   format = "wheel";
 
   propagatedBuildInputs = [ pyedbglib ];
+
+  meta = {
+    description = "pymcuprog is a utility for programming various Microchip MCU devices using Microchip CMSIS-DAP based debuggers";
+    homepage = "https://pypi.org/project/pymcuprog/";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ];
+    mainProgram = "pymcuprog";
+  };
 }
