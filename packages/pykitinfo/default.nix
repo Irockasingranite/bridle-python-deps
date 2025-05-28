@@ -31,4 +31,12 @@ buildPythonPackage rec {
     pyedbglib
     pydebuggerconfig
   ];
+
+  meta = {
+    description = "pykitinfo provides information about connected Microchip development kits and tools";
+    homepage = "https://pypi.org/project/pykitinfo/";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ];
+    mainProgram = "pykitinfo";
+  };
 }
