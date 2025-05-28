@@ -11,12 +11,12 @@
 
 buildPythonPackage rec {
   pname = "sphobjinv";
-  version = "2.3.1.2";
+  version = "2.3.1.3";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-HIdKNoRghRNS1FySr6FytcQmU7R+LnDXjWHayTMIqp0=";
+    hash = "sha256-odUeTPPZaLng0+0cvM6gBx5eV5XySi10AaTjfWvXVxc=";
   };
 
   build-system = [
