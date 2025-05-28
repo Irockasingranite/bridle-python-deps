@@ -21,4 +21,12 @@ buildPythonPackage rec {
   format = "wheel";
 
   propagatedBuildInputs = [ pyedbglib ];
+
+  meta = {
+    description = "pydebuggerconfig is a utility for accessing the configuration information stored inside the PKOB nano on-board debugger, typically found on Curiosity Nano kits.";
+    homepage = "https://pypi.org/project/pydebuggerconfig/";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ];
+    mainProgram = "pydebuggerconfig";
+  };
 }
