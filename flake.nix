@@ -20,32 +20,42 @@
       cache-nix-action,
       systems,
     }:
+    let
+      overlay = import ./overlay.nix;
+    in
     (flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ overlay ];
+        };
         lib = nixpkgs.lib;
-        python = pkgs.python3Packages;
       in
       rec {
         formatter = pkgs.nixfmt-rfc-style;
 
-        packages = rec {
+        packages = {
 
-          deptry = python.callPackage ./packages/deptry { };
-          doxmlparser = python.callPackage ./packages/doxmlparser { };
-          hdf5storage = python.callPackage ./packages/hdf5storage { inherit deptry; };
-          nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
-          pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
-          pyedbglib = python.callPackage ./packages/pyedbglib { };
-          pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
-          pymcuprog = python.callPackage ./packages/pymcuprog { inherit pyedbglib; };
-          sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
-          sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
-          sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
-          sphinx-lint = python.callPackage ./packages/sphinx-lint { };
-          sphobjinv = python.callPackage ./packages/sphobjinv { };
-          svada = python.callPackage ./packages/svada { };
+          inherit (pkgs)
+            deptry
+            nrf-regtool
+            sphinx-lint
+            svada
+            ;
+
+          inherit (pkgs.python3Packages)
+            doxmlparser
+            hdf5storage
+            pydebuggerconfig
+            pyedbglib
+            pykitinfo
+            pymcuprog
+            sphinx-tsn-theme
+            sphinxcontrib-svg2pdfconverter
+            sphinx-csv-filter
+            sphobjinv
+            ;
 
           inherit
             (import "${inputs.cache-nix-action}/saveFromGC.nix" {
@@ -64,5 +74,8 @@
 
         checks = packages;
       }
-    ));
+    ))
+    // {
+      overlays.default = overlay;
+    };
 }
