@@ -48,6 +48,8 @@
             ;
         };
 
+        devShells.default = pkgs.callPackage ./shell.nix { };
+
         checks = packages;
       }
     ))
