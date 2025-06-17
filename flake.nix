@@ -3,22 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    cache-nix-action = {
-      url = "github:nix-community/cache-nix-action";
-      flake = false;
-    };
-
-    systems.url = "github:nix-systems/default";
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
       flake-utils,
-      cache-nix-action,
-      systems,
     }:
     let
       overlay = import ./overlay.nix;
@@ -30,7 +21,6 @@
           inherit system;
           overlays = [ overlay ];
         };
-        lib = nixpkgs.lib;
       in
       rec {
         formatter = pkgs.nixfmt-rfc-style;
@@ -55,20 +45,6 @@
             sphinxcontrib-svg2pdfconverter
             sphinx-csv-filter
             sphobjinv
-            ;
-
-          inherit
-            (import "${inputs.cache-nix-action}/saveFromGC.nix" {
-              inherit pkgs inputs;
-              inputsExclude = [
-                # the systems input will still be saved
-                # because flake-utils needs it
-                inputs.systems
-              ];
-              # Needs to be a list
-              derivations = lib.attrsets.mapAttrsToList (name: _: name) packages;
-            })
-            saveFromGC
             ;
         };
 
