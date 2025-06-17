@@ -2,6 +2,8 @@
   lib,
   fetchPypi,
   buildPythonPackage,
+  lxml,
+  six,
 }:
 
 buildPythonPackage rec {
@@ -17,6 +19,11 @@ buildPythonPackage rec {
   };
 
   format = "wheel";
+
+  dependencies = [
+    lxml
+    six
+  ];
 
   meta = {
     description = "This is a python package to make it easier to parse the XML output produced by doxygen.";
