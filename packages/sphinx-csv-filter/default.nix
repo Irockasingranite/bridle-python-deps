@@ -51,7 +51,7 @@ buildPythonPackage rec {
   };
 
   pythonImportsCheck = [
-    "csv"
+    "crate.sphinx.csv"
   ];
 
   meta = {
