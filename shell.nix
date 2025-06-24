@@ -8,7 +8,6 @@ pkgs.mkShell {
     svada
     (python3.withPackages (
       ps: with ps; [
-        doxmlparser
         hdf5storage
         pydebuggerconfig
         pyedbglib
