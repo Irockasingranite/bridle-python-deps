@@ -36,6 +36,7 @@
 
           inherit (pkgs.python3Packages)
             hdf5storage
+            lxml5
             pydebuggerconfig
             pyedbglib
             pykitinfo
