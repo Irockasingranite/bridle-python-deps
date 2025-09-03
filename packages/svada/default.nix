@@ -2,6 +2,7 @@
   lib,
   python,
   fetchPypi,
+  lxml5,
 }:
 
 python.pkgs.buildPythonApplication rec {
@@ -26,7 +27,7 @@ python.pkgs.buildPythonApplication rec {
   ];
 
   dependencies = with python.pkgs; [
-    lxml
+    lxml5
     numpy_2
     typing-extensions
   ];

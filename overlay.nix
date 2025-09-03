@@ -14,7 +14,7 @@ let
   sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
   sphinx-lint = python.callPackage ./packages/sphinx-lint { };
   sphobjinv = python.callPackage ./packages/sphobjinv { };
-  svada = python.callPackage ./packages/svada { };
+  svada = python.callPackage ./packages/svada { inherit lxml5; };
 in
 {
   # Top-level packages
