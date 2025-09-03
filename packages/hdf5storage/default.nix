@@ -5,22 +5,22 @@
   poetry-core,
   h5py,
   numpy,
-  sphinx,
-  sphinx-rtd-theme,
-  scipy,
   deptry,
   pytest,
   ruff,
+  scipy,
+  sphinx,
+  sphinx-rtd-theme,
 }:
 
 buildPythonPackage rec {
   pname = "hdf5storage";
-  version = "0.2.0";
+  version = "0.2.1";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-uu++/wqaDcPyczhBBnY8bJiPltlGF3Jv1qDv/nPCnmM=";
+    hash = "sha256-qLZX5uPAe9NdRIFNLh3GSeLeGZ537Mpe/u1TmenugyY=";
   };
 
   build-system = [
@@ -33,6 +33,14 @@ buildPythonPackage rec {
   ];
 
   optional-dependencies = {
+    dev = [
+      deptry
+      pytest
+      ruff
+      scipy
+      sphinx
+      sphinx-rtd-theme
+    ];
     docs = [
       sphinx
       sphinx-rtd-theme
