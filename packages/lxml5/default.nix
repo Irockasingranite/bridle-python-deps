@@ -55,6 +55,11 @@ buildPythonPackage rec {
     ];
   };
 
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-quiet 'Cython>=3.0.11, < 3.1.0' 'Cython>=3.0.11'
+  '';
+
   pythonImportsCheck = [
     "lxml"
     "lxml.etree"
