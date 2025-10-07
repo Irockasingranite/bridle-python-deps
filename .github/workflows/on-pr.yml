@@ -1,0 +1,27 @@
+name: checks
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+
+  excalibur:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Determine PR Commits
+        run: |
+          echo "PR_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+          echo "PR_BASE=${{ github.event.pull_request.base.sha }}" >> "${GITHUB_ENV}"
+          echo "PR_HEAD=${{ github.event.pull_request.head.sha }}" >> "${GITHUB_ENV}"
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: ${{ github.event.pull_request.commits }} + 1
+      - name: Setup Nix
+        uses: ./.github/actions/setup
+      - name: Run Excalibur
+        run: |
+          nix run github:irockasingranite/excalibur/v0.1.1#excalibur -- -r ${PR_BASE}..${PR_HEAD}
