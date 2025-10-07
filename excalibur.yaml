@@ -1,0 +1,8 @@
+on-repository: []
+on-commit:
+  - name: Check Formatting
+    command: nix run nixpkgs#nixfmt-tree -- --ci
+    expected-exit: 0
+  - name: Run Flake Checks
+    command: nix flake check
+    expected-exit: 0
