@@ -6,21 +6,24 @@
   h5py,
   numpy,
   deptry,
+  mypy,
   pytest,
+  pytest-cov,
   ruff,
   scipy,
+  scipy-stubs,
   sphinx,
   sphinx-rtd-theme,
 }:
 
 buildPythonPackage rec {
   pname = "hdf5storage";
-  version = "0.2.1";
+  version = "0.2.2";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-qLZX5uPAe9NdRIFNLh3GSeLeGZ537Mpe/u1TmenugyY=";
+    hash = "sha256-bP0DGuug/fufsdsqp1sJqNa4RcmHRbSiwMjY11LVj+c=";
   };
 
   build-system = [
@@ -35,9 +38,12 @@ buildPythonPackage rec {
   optional-dependencies = {
     dev = [
       deptry
+      mypy
       pytest
+      pytest-cov
       ruff
       scipy
+      scipy-stubs
       sphinx
       sphinx-rtd-theme
     ];
@@ -51,7 +57,12 @@ buildPythonPackage rec {
     tests = [
       deptry
       pytest
+      pytest-cov
       ruff
+    ];
+    typechecking = [
+      mypy
+      scipy-stubs
     ];
   };
 
