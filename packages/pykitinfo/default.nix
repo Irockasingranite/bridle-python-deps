@@ -7,6 +7,7 @@
   appdirs,
   pyedbglib,
   pydebuggerconfig,
+  libusb-package,
 }:
 
 buildPythonPackage rec {
@@ -30,6 +31,7 @@ buildPythonPackage rec {
     appdirs
     pyedbglib
     pydebuggerconfig
+    libusb-package
   ];
 
   meta = {
