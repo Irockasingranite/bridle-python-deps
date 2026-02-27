@@ -3,6 +3,8 @@
   fetchPypi,
   buildPythonPackage,
   pyserial,
+  cython,
+  hidapi,
 }:
 
 buildPythonPackage rec {
@@ -20,7 +22,11 @@ buildPythonPackage rec {
 
   format = "wheel";
 
-  propagatedBuildInputs = [ pyserial ];
+  propagatedBuildInputs = [
+    pyserial
+    cython
+    hidapi
+  ];
 
   meta = {
     description = "pyedbglib is a low-level protocol library for communicating with Microchip CMSIS-DAP based debuggers";
