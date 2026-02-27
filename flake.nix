@@ -19,6 +19,9 @@
       let
         pkgs = import nixpkgs {
           inherit system;
+        };
+        pkgs-overlaid = import nixpkgs {
+          inherit system;
           overlays = [ overlay ];
         };
       in
@@ -27,14 +30,14 @@
 
         packages = {
 
-          inherit (pkgs)
+          inherit (pkgs-overlaid)
             deptry
             nrf-regtool
             sphinx-lint
             svada
             ;
 
-          inherit (pkgs.python3Packages)
+          inherit (pkgs-overlaid.python3Packages)
             docutils
             hdf5storage
             pydebuggerconfig
@@ -59,7 +62,7 @@
               nixfmt-tree
             ];
           };
-          all-packages = pkgs.callPackage ./all-packages-shell.nix { };
+          all-packages = pkgs-overlaid.callPackage ./all-packages-shell.nix { };
         };
 
         checks = packages;
