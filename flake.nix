@@ -40,6 +40,7 @@
             pyedbglib
             pykitinfo
             pymcuprog
+            sphinx
             sphinx-tsn-theme
             sphinxcontrib-svg2pdfconverter
             sphinx-csv-filter
