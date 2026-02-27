@@ -6,13 +6,13 @@
 
 python.pkgs.buildPythonApplication rec {
   pname = "sphinx-lint";
-  version = "1.0.0";
+  version = "1.0.2";
   pyproject = true;
 
   src = fetchPypi {
     pname = "sphinx_lint";
     inherit version;
-    hash = "sha256-bq/bRBcs5Sb0Bb82xxPrJG8TQOwtZn5ymOJIftdt7NI=";
+    hash = "sha256-Tn/BL0T3ULAAbqrSN9fbmx2KupKt2pyDiviRZUs3HTU=";
   };
 
   build-system = [
