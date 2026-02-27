@@ -23,7 +23,7 @@
         };
       in
       rec {
-        formatter = pkgs.nixfmt-rfc-style;
+        formatter = pkgs.nixfmt;
 
         packages = {
 
@@ -48,7 +48,18 @@
             ;
         };
 
-        devShells.default = pkgs.callPackage ./shell.nix { };
+        devShells = {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              nix-init
+              nix-update
+              (python3.withPackages (ps: [ ps.packaging ]))
+              nixfmt
+              nixfmt-tree
+            ];
+          };
+          all-packages = pkgs.callPackage ./all-packages-shell.nix { };
+        };
 
         checks = packages;
       }

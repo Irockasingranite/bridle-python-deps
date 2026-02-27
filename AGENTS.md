@@ -19,8 +19,8 @@ in nixpkgs.
 
 - Use `nix develop` to enter a development environment with useful tools
   installed.
-- The development environment also contains the packages themselves, which
-  allows for testing imports.
+- Use `nix develop .#all-packages` to enter a development environment that
+  also contains the packages themselves, which allows for testing imports.
 
 ## Checking for updates
 
