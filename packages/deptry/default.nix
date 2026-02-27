@@ -9,18 +9,18 @@
 
 python.pkgs.buildPythonApplication rec {
   pname = "deptry";
-  version = "0.23.1";
+  version = "0.24.0";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-XSPg7yXzxWQFwFODpHbt2lWURWPFxHo+kkntPshg04I=";
+    hash = "sha256-hS6IryCH4Dzfns5pFvP1i3QZGrUcyAdIl5Ub1Jbufbs=";
   };
 
   cargoDeps = rustPlatform.importCargoLock {
     lockFile = ./Cargo.lock;
     outputHashes = {
-      "ruff_python_ast-0.0.0" = "sha256-XuHVKxzXYlm3iEhdAVCyd62uNyb3jeJRl3B0hnvUzX0=";
+      "ruff_python_ast-0.0.0" = "sha256-jRH7OOT03MDomZAJM20+J4y5+xjN1ZAV27Z44O1qCEQ=";
     };
   };
 
