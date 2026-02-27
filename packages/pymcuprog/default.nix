@@ -3,6 +3,9 @@
   fetchPypi,
   buildPythonPackage,
   pyedbglib,
+  intelhex,
+  pyyaml,
+  appdirs,
 }:
 
 buildPythonPackage rec {
@@ -20,7 +23,12 @@ buildPythonPackage rec {
 
   format = "wheel";
 
-  propagatedBuildInputs = [ pyedbglib ];
+  propagatedBuildInputs = [
+    pyedbglib
+    intelhex
+    pyyaml
+    appdirs
+  ];
 
   meta = {
     description = "pymcuprog is a utility for programming various Microchip MCU devices using Microchip CMSIS-DAP based debuggers";
