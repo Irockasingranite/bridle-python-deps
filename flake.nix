@@ -35,6 +35,7 @@
             ;
 
           inherit (pkgs.python3Packages)
+            docutils
             hdf5storage
             pydebuggerconfig
             pyedbglib
