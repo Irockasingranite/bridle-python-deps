@@ -16,13 +16,13 @@
 
 buildPythonPackage rec {
   pname = "sphinx-csv-filter";
-  version = "0.4.2";
+  version = "0.4.3";
   pyproject = true;
 
   src = fetchPypi {
     pname = "sphinx_csv_filter";
     inherit version;
-    hash = "sha256-5tFhTKMNhUA6XOZo9jSKmu7KuL9yOKPRNyPTxW6dqjQ=";
+    hash = "sha256-KOgKh2iz1HyUN27AZDGRqpasZGuvIQ/PHJC+IfIcH0M=";
   };
 
   build-system = [
