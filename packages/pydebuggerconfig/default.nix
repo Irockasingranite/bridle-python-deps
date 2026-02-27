@@ -3,6 +3,11 @@
   fetchPypi,
   buildPythonPackage,
   pyedbglib,
+  crcmod,
+  intelhex,
+  pyyaml,
+  appdirs,
+  xmlschema,
 }:
 
 buildPythonPackage rec {
@@ -20,7 +25,14 @@ buildPythonPackage rec {
 
   format = "wheel";
 
-  propagatedBuildInputs = [ pyedbglib ];
+  propagatedBuildInputs = [
+    pyedbglib
+    crcmod
+    intelhex
+    pyyaml
+    appdirs
+    xmlschema
+  ];
 
   meta = {
     description = "pydebuggerconfig is a utility for accessing the configuration information stored inside the PKOB nano on-board debugger, typically found on Curiosity Nano kits.";
