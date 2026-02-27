@@ -7,12 +7,12 @@
 
 python.pkgs.buildPythonApplication rec {
   pname = "svada";
-  version = "2.2.0";
+  version = "2.2.1";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-F46QnoMX0MqrrBaQhkKavzXq62ZCXkv3kbQD0Nv+Wmc=";
+    hash = "sha256-iI1p2++qIdxztb5Jvuggt6nAUnPwgYk4+7zYAuD0nE4=";
   };
 
   # WORKAROUND: Remove version bound on hatchling
