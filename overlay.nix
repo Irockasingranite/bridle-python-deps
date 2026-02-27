@@ -4,7 +4,6 @@ let
   deptry = python.callPackage ./packages/deptry { };
   hdf5storage = python.callPackage ./packages/hdf5storage { inherit deptry; };
   nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
-  lxml5 = python.callPackage ./packages/lxml5 { };
   pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
   pyedbglib = python.callPackage ./packages/pyedbglib { };
   pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
@@ -30,7 +29,6 @@ in
     (pyfinal: pyprev: {
       inherit
         hdf5storage
-        lxml5
         pydebuggerconfig
         pyedbglib
         pykitinfo
