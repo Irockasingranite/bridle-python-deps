@@ -9,13 +9,13 @@
 
 buildPythonPackage (finalAttrs: {
   pname = "sphinx-filter-tabs";
-  version = "1.4.0";
+  version = "1.4.3";
   pyproject = true;
 
   src = fetchPypi {
     pname = "sphinx_filter_tabs";
     inherit (finalAttrs) version;
-    hash = "sha256-ZdH38n87vvAj7Zs34GZtvufCrvrQhfFtCeJfBpdFI68=";
+    hash = "sha256-/gAauQm1C1actbtminPwMW97jSGKByyEMCd2Sq3IGts=";
   };
 
   build-system = [
