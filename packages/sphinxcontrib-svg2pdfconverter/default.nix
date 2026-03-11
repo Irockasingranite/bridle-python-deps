@@ -10,13 +10,13 @@
 
 buildPythonPackage rec {
   pname = "sphinxcontrib-svg2pdfconverter";
-  version = "2.0.0";
+  version = "2.1.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "sphinxcontrib_svg2pdfconverter";
     inherit version;
-    hash = "sha256-q5yPEIA5HiMYEtIKvyZXpp7jVXRWOxAUQU+VOWSpX6M=";
+    hash = "sha256-l1boLV878RYp/8uvsfihCS07tHieM0lAMs3OmpyEWdM=";
   };
 
   build-system = [
