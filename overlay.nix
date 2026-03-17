@@ -1,6 +1,7 @@
 final: prev:
 let
   python = prev.python3Packages;
+  coverxygen = python.callPackage ./packages/coverxygen { };
   deptry = python.callPackage ./packages/deptry { };
   docutils = python.callPackage ./packages/docutils20 { };
   hdf5storage = python.callPackage ./packages/hdf5storage { inherit deptry; };
@@ -31,6 +32,7 @@ in
   pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
     (pyfinal: pyprev: {
       inherit
+        coverxygen
         docutils
         hdf5storage
         pydebuggerconfig
