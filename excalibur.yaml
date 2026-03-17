@@ -1,4 +1,3 @@
-on-repository: []
 on-commit:
   - name: Check Formatting
     command: nix run nixpkgs#nixfmt-tree -- --ci

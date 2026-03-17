@@ -24,4 +24,4 @@ jobs:
         uses: ./.github/actions/setup
       - name: Run Excalibur
         run: |
-          nix run github:irockasingranite/excalibur/v0.1.1#excalibur -- -r ${PR_BASE}..${PR_HEAD}
+          nix run github:irockasingranite/excalibur/v0.1.2#excalibur -- -r ${PR_BASE}..${PR_HEAD}
