@@ -9,7 +9,6 @@ let
   pyedbglib = python.callPackage ./packages/pyedbglib { };
   pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
   pymcuprog = python.callPackage ./packages/pymcuprog { inherit pyedbglib; };
-  sphinx = python.callPackage ./packages/sphinx904 { };
   sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
   sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
   sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
@@ -37,7 +36,6 @@ in
         pyedbglib
         pykitinfo
         pymcuprog
-        sphinx
         sphinx-csv-filter
         sphinx-filter-tabs
         sphinx-tsn-theme
