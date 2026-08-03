@@ -26,6 +26,13 @@ buildPythonPackage rec {
     hash = "sha256-KOgKh2iz1HyUN27AZDGRqpasZGuvIQ/PHJC+IfIcH0M=";
   };
 
+  # Upstream pins setuptools<83 in build-system requires, which is not
+  # available in nixpkgs
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-fail '"setuptools<83"' '"setuptools"'
+  '';
+
   build-system = [
     setuptools
     wheel
