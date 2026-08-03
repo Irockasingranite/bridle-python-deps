@@ -5,6 +5,7 @@
   setuptools,
   wheel,
   sphinx,
+  docutils,
   build,
   twine,
   flake8,
@@ -32,6 +33,11 @@ buildPythonPackage rec {
 
   dependencies = [
     sphinx
+    docutils
+  ];
+
+  pythonRelaxDeps = [
+    "docutils"
   ];
 
   optional-dependencies = {
