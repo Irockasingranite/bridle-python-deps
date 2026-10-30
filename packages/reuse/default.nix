@@ -30,14 +30,14 @@ buildPythonPackage {
   pname = "reuse";
   # Unreleased snapshot of main, needed for features after v6.2.0
   # (e.g. custom_properties in REUSE.toml annotations, f94ae0b1bb).
-  version = "6.2.0-unstable-2026-10-13";
+  version = "6.2.0-unstable-2026-07-24";
   pyproject = true;
 
   src = fetchFromCodeberg {
     owner = "fsfe";
     repo = "reuse-tool";
-    rev = "76c399d9f941cdad857c88fcdda4fdc89cbca134";
-    hash = "sha256-//2O4aG6Ww0eGjL88j2Zln1ysiJ3qC9E3cnjvDvKv00=";
+    rev = "f94ae0b1bb1d4d2ea91f49df88f3184c5d781a1d";
+    hash = "sha256-bk0fvuNf5nVzn0tISuU0yb0z3Z84HuShoLCemQk0MIw=";
   };
 
   outputs = [
