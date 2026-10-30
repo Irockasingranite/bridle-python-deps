@@ -4,6 +4,7 @@ pkgs.mkShell {
   packages = with pkgs; [
     deptry
     nrf-regtool
+    reuse
     sphinx-lint
     svada
     (python3.withPackages (
@@ -13,6 +14,7 @@ pkgs.mkShell {
         pyedbglib
         pykitinfo
         pymcuprog
+        reuse
         sphinx-tsn-theme
         sphinxcontrib-svg2pdfconverter
         sphinx-csv-filter
