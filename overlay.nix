@@ -9,7 +9,6 @@ let
   sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
   sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
   sphinx-filter-tabs = python.callPackage ./packages/sphinx-filter-tabs { };
-  sphinx-lint = python.callPackage ./packages/sphinx-lint { };
   sphobjinv = python.callPackage ./packages/sphobjinv { };
   svada = python.callPackage ./packages/svada { };
 in
@@ -17,7 +16,6 @@ in
   # Top-level packages
   inherit
     nrf-regtool
-    sphinx-lint
     svada
     ;
 

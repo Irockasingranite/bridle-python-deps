@@ -33,7 +33,6 @@
           inherit (pkgs-overlaid)
             nrf-regtool
             reuse
-            sphinx-lint
             svada
             ;
 

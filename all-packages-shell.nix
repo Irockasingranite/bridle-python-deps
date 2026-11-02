@@ -4,7 +4,6 @@ pkgs.mkShell {
   packages = with pkgs; [
     nrf-regtool
     reuse
-    sphinx-lint
     svada
     (python3.withPackages (
       ps: with ps; [
