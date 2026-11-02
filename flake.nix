@@ -42,7 +42,6 @@
             pykitinfo
             sphinx
             sphinx-tsn-theme
-            sphinxcontrib-svg2pdfconverter
             sphinx-csv-filter
             sphinx-filter-tabs
             sphobjinv

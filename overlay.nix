@@ -6,7 +6,6 @@ let
   pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig; };
   reuse = python.callPackage ./packages/reuse { };
   sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
-  sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
   sphinx-csv-filter = python.callPackage ./packages/sphinx-csv-filter { };
   sphinx-filter-tabs = python.callPackage ./packages/sphinx-filter-tabs { };
   sphobjinv = python.callPackage ./packages/sphobjinv { };
@@ -29,7 +28,6 @@ in
         sphinx-csv-filter
         sphinx-filter-tabs
         sphinx-tsn-theme
-        sphinxcontrib-svg2pdfconverter
         sphobjinv
         ;
     })
