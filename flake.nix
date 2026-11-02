@@ -38,7 +38,6 @@
             ;
 
           inherit (pkgs-overlaid.python3Packages)
-            coverxygen
             docutils
             pydebuggerconfig
             pykitinfo

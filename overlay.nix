@@ -1,7 +1,6 @@
 final: prev:
 let
   python = prev.python3Packages;
-  coverxygen = python.callPackage ./packages/coverxygen { };
   nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
   pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { };
   pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig; };
@@ -26,7 +25,6 @@ in
   pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
     (pyfinal: pyprev: {
       inherit
-        coverxygen
         pydebuggerconfig
         pykitinfo
         reuse
