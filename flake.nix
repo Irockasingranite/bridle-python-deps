@@ -37,10 +37,8 @@
             ;
 
           inherit (pkgs-overlaid.python3Packages)
-            docutils
             pydebuggerconfig
             pykitinfo
-            sphinx
             sphinx-tsn-theme
             sphinx-csv-filter
             sphinx-filter-tabs
