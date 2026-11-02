@@ -28,7 +28,7 @@ python.pkgs.buildPythonApplication rec {
 
   dependencies = with python.pkgs; [
     lxml
-    numpy_2
+    numpy
     typing-extensions
   ];
 
