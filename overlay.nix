@@ -3,9 +3,8 @@ let
   python = prev.python3Packages;
   coverxygen = python.callPackage ./packages/coverxygen { };
   nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
-  pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
-  pyedbglib = python.callPackage ./packages/pyedbglib { };
-  pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig pyedbglib; };
+  pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { };
+  pykitinfo = python.callPackage ./packages/pykitinfo { inherit pydebuggerconfig; };
   reuse = python.callPackage ./packages/reuse { };
   sphinx-tsn-theme = python.callPackage ./packages/sphinx-tsn-theme { };
   sphinxcontrib-svg2pdfconverter = python.callPackage ./packages/sphinxcontrib-svg2pdfconverter { };
@@ -29,7 +28,6 @@ in
       inherit
         coverxygen
         pydebuggerconfig
-        pyedbglib
         pykitinfo
         reuse
         sphinx-csv-filter

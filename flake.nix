@@ -41,7 +41,6 @@
             coverxygen
             docutils
             pydebuggerconfig
-            pyedbglib
             pykitinfo
             sphinx
             sphinx-tsn-theme

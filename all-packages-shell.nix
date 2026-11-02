@@ -9,7 +9,6 @@ pkgs.mkShell {
     (python3.withPackages (
       ps: with ps; [
         pydebuggerconfig
-        pyedbglib
         pykitinfo
         reuse
         sphinx-tsn-theme
