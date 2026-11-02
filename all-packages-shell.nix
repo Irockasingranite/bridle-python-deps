@@ -11,7 +11,6 @@ pkgs.mkShell {
         pydebuggerconfig
         pyedbglib
         pykitinfo
-        pymcuprog
         reuse
         sphinx-tsn-theme
         sphinxcontrib-svg2pdfconverter
