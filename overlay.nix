@@ -2,7 +2,6 @@ final: prev:
 let
   python = prev.python3Packages;
   coverxygen = python.callPackage ./packages/coverxygen { };
-  deptry = python.callPackage ./packages/deptry { };
   nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
   pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
   pyedbglib = python.callPackage ./packages/pyedbglib { };
@@ -20,7 +19,6 @@ in
 {
   # Top-level packages
   inherit
-    deptry
     nrf-regtool
     sphinx-lint
     svada

@@ -31,7 +31,6 @@
         packages = {
 
           inherit (pkgs-overlaid)
-            deptry
             nrf-regtool
             reuse
             sphinx-lint

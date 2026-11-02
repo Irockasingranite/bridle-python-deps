@@ -2,7 +2,6 @@
 pkgs.mkShell {
 
   packages = with pkgs; [
-    deptry
     nrf-regtool
     reuse
     sphinx-lint
