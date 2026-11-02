@@ -41,7 +41,6 @@
           inherit (pkgs-overlaid.python3Packages)
             coverxygen
             docutils
-            hdf5storage
             pydebuggerconfig
             pyedbglib
             pykitinfo

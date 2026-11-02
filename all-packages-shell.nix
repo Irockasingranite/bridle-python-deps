@@ -9,7 +9,6 @@ pkgs.mkShell {
     svada
     (python3.withPackages (
       ps: with ps; [
-        hdf5storage
         pydebuggerconfig
         pyedbglib
         pykitinfo

@@ -3,7 +3,6 @@ let
   python = prev.python3Packages;
   coverxygen = python.callPackage ./packages/coverxygen { };
   deptry = python.callPackage ./packages/deptry { };
-  hdf5storage = python.callPackage ./packages/hdf5storage { inherit deptry; };
   nrf-regtool = python.callPackage ./packages/nrf-regtool { inherit svada; };
   pydebuggerconfig = python.callPackage ./packages/pydebuggerconfig { inherit pyedbglib; };
   pyedbglib = python.callPackage ./packages/pyedbglib { };
@@ -32,7 +31,6 @@ in
     (pyfinal: pyprev: {
       inherit
         coverxygen
-        hdf5storage
         pydebuggerconfig
         pyedbglib
         pykitinfo
