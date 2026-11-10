@@ -32,6 +32,7 @@
 
           inherit (pkgs-overlaid)
             nrf-regtool
+            reuse
             svada
             ;
 
